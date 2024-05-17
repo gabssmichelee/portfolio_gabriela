@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Meu Portfólio</h1>
+</header>
+<div class="container">
+    <div class="content">
+        <section class="portfolio-item">
+            <h2>Sobre Mim</h2>
+            <p>Meu nome é Gabriela Michele Soares, tenho 25 anos....</p>
+            <a href="sobre_mim.html"class="botao">Ver mais</a>
+        </section>
+
+        <section class="portfolio-item">
+            <h2>Curiosidades</h2>
+            <p>Fora do ambiente profissional, tenho um grande interesse pela moda....</p>
+            <a href="curiosidades.html"class="botao">Ver mais</a>
+        </section>
+
+        <section class="portfolio-item">
+            <h2>Experiência Profissional</h2>
+            <p>Minha primeira experiência começou na Greift Embalagens Industriais...</p>
+            <a href="experiencia_profissional.html"class="botao">Ver mais</a>
+        </section>
+
+        <section class="portfolio-item">
+            <h2>Planos para o Futuro</h2>
+            <p>Profissionalmente, estou focada em me especializar ainda mais na ...</p>
+            <a href="planos_futuros.html"class="botao">Ver mais</a>
+        </section>
+    </div>
+    <!-- box de pergunta -->
+    <section class="portfolio-item">
+         <section class="portfolio-item">
+            <h2>Pergunte aqui</h2>
+            <form id="qa-form">
+                <label for="question">Deixe aqui sua dúvida:</label><br>
+                <textarea id="question" name="question" rows="3" cols="25"></textarea><br>
+                <button type="button" onclick="submitQuestion()">Enviar</button>
+            </form>
+            <div id="qa-container">
+                <!-- conclui o envio da pergunta -->
+            </div>
+        </section>
+</div>
+
+    <main>
+        <div class="card">
+            <img src="https://media.licdn.com/dms/image/D4D03AQFWD0AKFDVETA/profile-displayphoto-shrink_800_800/0/1702478792354?e=2147483647&v=beta&t=MF86s2q_d48z4uOAXex3jtmhDyJnQJHRMEvCCfKnd7s"
+                 alt="Gabriela Michele Soares"
+            />
+        </div>
+    </main>
+</div>
+<footer>
+    <p>&copy; 2024, Gabriela Michele Soares</p>
+</footer>
+
+<script>
+    function submitQuestion() {
+        const questionText = document.getElementById('question').value;
+        if (questionText) {
+            const qaContainer = document.getElementById('qa-container');
+            const questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.textContent = 'Q: ' + questionText;
+
+            qaContainer.appendChild(questionDiv);
+            
+            // Limpar o campo de texto após enviar a pergunta
+            document.getElementById('question').value = '';
+        }
+    }
+</script>
+</script>
+</body>
+</html>
